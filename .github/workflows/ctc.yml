@@ -4,7 +4,7 @@
 # Author: kenzo
 #=================================================
 
-name: ctc_x86_64
+name: ctc_RaspberryPi_3B
 
 on: 
   release:
