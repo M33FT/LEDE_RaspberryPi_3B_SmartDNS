@@ -13,13 +13,9 @@ on:
   push:
     branches: 
       - master
-      
-  uses: zcong1993/setup-timezone@master
-  with:
-    timezone: Asia/Tehran
-      
+
   schedule:
-    - cron: 07 19 * * *
+    - cron: 08 19 * * *
   
   watch:
     types: [started]
