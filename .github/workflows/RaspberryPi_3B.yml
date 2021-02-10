@@ -109,5 +109,5 @@ jobs:
     - name : 上传固件与目录
       uses: actions/upload-artifact@master
       with:
-        name: NanoPi_R2S
+        name: RaspberryPi_3B
         path: openwrt/bin
