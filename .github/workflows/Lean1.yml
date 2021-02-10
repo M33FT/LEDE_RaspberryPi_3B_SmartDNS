@@ -15,7 +15,7 @@ on:
       - master
       
   schedule:
-    - cron: 43 15 * * *
+    - cron: 15 19 * * *
   
   watch:
     types: [started]
@@ -76,7 +76,7 @@ jobs:
       working-directory: ./openwrt
       run: |
         git clone https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall
-        git clone https://github.com/kenzok8/litte package/litte     
+        git clone https://github.com/M33FT/litte package/litte  
 
     - name: 自定义配置文件Lean
       env:
