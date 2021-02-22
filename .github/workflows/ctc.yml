@@ -15,7 +15,7 @@ on:
       - master
       
   schedule:
-    - cron: 22 20 * * *
+    - cron: 26 20 * * *
   
   watch:
     types: [started]
@@ -95,8 +95,7 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         ./scripts/feeds install -a
-
-        
+       
     - name: bypass
       working-directory: ./immortalwrt
       run: |
