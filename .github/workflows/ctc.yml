@@ -76,26 +76,6 @@ jobs:
       run: |
         git clone https://github.com/M33FT/litte package/litte
 
-    - name: 自定义配置ctc文件
-      env:
-        CONFIG_FILE: 'ctc.config'
-      run: |
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE immortalwrt/.config
-        chmod +x ./customize.sh && ./customize.sh
-        cd immortalwrt && rm -rf package/litte/luci-app-passwall && rm -rf package/litte/luci-app-ssr-plus
-        rm -rf package/litte/microsocks && rm -rf package/litte/redsocks2 && rm -rf package/litte/tcping
-        rm -rf package/litte/AdGuardHome && rm -rf package/litte/luci-app-adguardhome && rm -rf package/litte/luci-app-jd-dailybonus
-        rm -rf package/litte/luci-app-advancedsetting && rm -rf package/litte/luci-app-aliddns && rm -rf package/litte/luci-app-clash
-        rm -rf package/litte/gost && rm -rf package/litte/luci-app-gost && rm -rf package/litte/luci-app-eqos && rm -rf package/litte/naiveproxy
-        rm -rf package/litte/luci-app-openclash && rm -rf package/litte/luci-app-smartdns && rm -rf package/litte/smartdns
-        rm -rf package/ctcgfw/luci-theme-atmaterial && rm -rf package/ctcgfw/luci-theme-opentomato && rm -rf package/ctcgfw/luci-theme-opentomcat
-        cp -f package/litte/default-settings package/lean/default-settings/files/zzz-default-settings
-        cp -f package/litte/banner package/base-files/files/etc/banner
-        cp -f package/litte/ctcdiffconfig .config && make defconfig
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
-        ./scripts/feeds install -a
-       
     - name: bypass
       working-directory: ./immortalwrt
       run: |
